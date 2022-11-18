@@ -12,7 +12,7 @@ export class UsersService {
 
   login(user: any): Observable<any> {
     //return this.http.post("https://reqres.in/api/login", user);
-    return this.http.get("http://localhost:4000/list_gateway", user);
+    return this.http.get("http://localhost:8080/api/gateways", user);
   }
   register(user: any): Observable<any> {
     // return this.http.post("http://localhost:8080/api/gateway", user);
