@@ -19,6 +19,8 @@ import { LoginComponent } from './components/authenication/login/login.component
 import { RegisterComponent } from './components/authenication/register/register.component';
 import { CookieService } from 'ngx-cookie-service';
 
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   providers: [
     HttpClientModule,
-    CookieService
+    CookieService,
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

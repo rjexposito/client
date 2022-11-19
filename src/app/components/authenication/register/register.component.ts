@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from "../../../services/users/users.service";
+// import { UsersService } from "../../../services/users.service";
+import { AuthService } from "../../../services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -7,23 +8,33 @@ import { UsersService } from "../../../services/users/users.service";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  email: string;
-  password: string;
-  confirmPassword: string;
+  form: any = {
+    username: null,
+    email: null,
+    password: null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  constructor(public userService: UsersService) {
-    this.email = '';
-    this.password = '';
-    this.confirmPassword = '';
-  }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  register() {
-    const user = { email: this.email, password: this.password };
-    this.userService.register(user).subscribe(data => {
-      this.userService.setToken(data.token);
+  onSubmit(): void {
+    const { username, email, password } = this.form;
+
+    this.authService.register(username, email, password).subscribe({
+      next: data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
     });
   }
 }

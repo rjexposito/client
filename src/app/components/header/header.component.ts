@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../services/users/users.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +9,12 @@ import { UsersService } from '../../services/users/users.service';
 })
 export class HeaderComponent implements OnInit {
 
- // const usuario = '';
-  constructor( private user: UsersService ) {
-   user.login;
+  constructor( ) {
   }
 
   login(){
-   this.user.login;
-  }
 
+   }
 
   ngOnInit(): void {
   }
