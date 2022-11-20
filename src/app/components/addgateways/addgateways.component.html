@@ -1,39 +1,45 @@
 <div>
-<h1> Aqui va la UI de crear Gateways</h1>
-</div>
-
-<!-- <div>
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="serial_number">Title</label>
         <input
           type="text"
           class="form-control"
-          id="title"
+          id="serial_number"
           required
-          [(ngModel)]="tutorial.title"
-          name="title"
+          [(ngModel)]="serial_number"
+          name="serial_number"
         />
       </div>
 
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="human_readable">Human_readable</label>
         <input
           class="form-control"
-          id="description"
+          id="human_readable"
           required
-          [(ngModel)]="tutorial.description"
-          name="description"
+          [(ngModel)]="human_readable"
+          name="human_readable"
+        />
+      </div>
+      <div class="form-group">
+        <label for="ipv4_address">Ipv4_address</label>
+        <input
+          class="form-control"
+          id="ipv4_address"
+          required
+          [(ngModel)]="ipv4_address"
+          name="ipv4_address"
         />
       </div>
 
-      <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+      <button (click)="saveGateway()" class="btn btn-success">Submit</button>
     </div>
 
-    <div *ngIf="submitted">
+    <!-- <div *ngIf="submitted">
       <h4>Gateway was submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newTutorial()">Add</button>
-    </div>
+      <button class="btn btn-success" (click)="newGateway()">Add</button>
+    </div> -->
   </div>
-</div> -->
+</div>

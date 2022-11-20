@@ -1,4 +1,9 @@
-/* * {
+  /* card-container{
+    width: 18rem;
+    margin-left: 60px;
+  } */
+
+* {
     box-sizing: border-box;
   }
   html,
@@ -48,4 +53,4 @@
     border-radius: 1.5rem;
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     cursor: pointer;
-  } */
+  }

@@ -11,7 +11,7 @@
       (ngSubmit)="f.form.valid && onSubmit()"
       #f="ngForm"
       novalidate
-    >
+     >
       <div class="form-group">
         <label for="username">Username</label>
         <input
@@ -53,9 +53,13 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary btn-block">
+        <button class="btn btn-primary btn-block" [routerLink]="['../addgateways']" routerLinkActive="router-link-active" >
           Login
         </button>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" [routerLink]="['/register']" routerLinkActive="router-link-active"
+          >Sign Up</button>
+        </div>
       </div>
       <div class="form-group">
         <div
@@ -73,24 +77,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="login">
-    <form class="custom-form" method="post">
-      <h1>Login</h1>
-      <input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        placeholder="Email"
-        required="required"
-      />
-      <input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        placeholder="Password"
-        required="required"
-      />
-      <button type="submit" (click)="login()">Log in</button>
-    </form>
-  </div> -->
