@@ -9,9 +9,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
- // boolean: a = false;
-  constructor( private auth : AuthService) {
-    auth.isAuntenticated();
+  constructor( ) {
+
   }
 
   ngOnInit(): void {

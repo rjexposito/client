@@ -15,11 +15,14 @@ import { GatewaysComponent } from './components/addgateways/addgateways.componen
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/authenication/login/login.component';
-import { RegisterComponent } from './components/authenication/register/register.component';
+import { LoginComponent } from './components/authentication/login/login.component';
+import { RegisterComponent } from './components/authentication/register/register.component';
 import { CookieService } from 'ngx-cookie-service';
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { ProfileComponent } from './components/profile/profile.component';
+import { BoardAdminComponent } from './components/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     BodyComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent
   ],
   imports: [
     BrowserModule,
