@@ -15,6 +15,10 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) { }
 
+  public isAuntenticated(): boolean{
+    return true;
+  }
+
   login(username: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
       username,
