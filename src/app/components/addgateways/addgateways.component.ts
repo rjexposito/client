@@ -13,30 +13,30 @@ export class GatewaysComponent implements OnInit {
   serial_number: string = "";
   human_readable: string = "";
   ipv4_address: string = "";
-  // gateway: Gateway = {
-  // id: '1',
-  // serial_number:  'rrrr', // a unique serial number (string)
-  // human_readable: '',   //human-readable name (string)
-  // ipv4_address:   '',  // IPv4 address (to be validated)
-  //                           //multiple associated peripheral devices
-  // published: false,
-  // };
   submitted = false;
   errorMessage = '';
+
+  all_gateways: Gateway[] = [];
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.getAll();
+  }
 
+  getAll(): void{
+    this.authService.getAllGateways().subscribe( gateways_list => {
+      this.all_gateways = gateways_list;
+     })
   }
 
   saveGateway(): void {
     const serial_number = this.serial_number;
     const human_readable = this.human_readable;
     const ipv4_address = this.ipv4_address;
-
-    this.authService.createGateway(serial_number,human_readable,ipv4_address).subscribe({
-
+    this.authService.createGateway(serial_number,human_readable,ipv4_address).subscribe(_ =>{
+      this.getAll();
+      this.initialize();
     });
   }
 
@@ -49,4 +49,9 @@ export class GatewaysComponent implements OnInit {
   //   };
   // }
 
+  initialize(): void{
+    this.serial_number = "";
+    this.human_readable = "";
+    this.ipv4_address = "";
+  }
 }

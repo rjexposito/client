@@ -1,8 +1,9 @@
 <div>
+  <h3>Create a new Gateway</h3>
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
-        <label for="serial_number">Title</label>
+        <label for="serial_number">Serial number</label>
         <input
           type="text"
           class="form-control"
@@ -33,13 +34,34 @@
           name="ipv4_address"
         />
       </div>
-
-      <button (click)="saveGateway()" class="btn btn-success">Submit</button>
+        <button  class="btn btn-success" (click)="saveGateway()" style="margin-top: 20px;">Submit</button>
     </div>
 
     <!-- <div *ngIf="submitted">
       <h4>Gateway was submitted successfully!</h4>
       <button class="btn btn-success" (click)="newGateway()">Add</button>
     </div> -->
+
   </div>
 </div>
+
+<h3>Gateways</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Serial number</th>
+      <th scope="col">Human readable</th>
+      <th scope="col">Ipv4 address</th>
+      <th scope="col">Published</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gate of all_gateways; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{gate.serial_number}}</td>
+      <td>{{gate.human_readable}}</td>
+      <td>{{gate.ipv4_address}}</td>
+    </tr>
+
+  </tbody>
+</table>

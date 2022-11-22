@@ -1,19 +1,25 @@
 <div class="row">
 
-  <div class="col-md-6" style="width: 210px;border-left-width: 27px;margin-left: 200px;margin-right: 200px;padding-left: 0px;padding-right: 0px;border-right-width: 0px;">
-    <div class="card">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
+ <!-- <div class="col-md-6" style="width: 210px;border-left-width: 27px;margin-left: 200px;margin-right: 200px;padding-left: 0px;padding-right: 0px;border-right-width: 0px;"> -->
+  <div class="col-md-4" ></div>
+  <div class="col-md-3" >
+    <div class="card card-container" style="border: none;">
+      <div class="card-header">
+       <h4 style="text-align:center;">JvlSoft Login Form</h4>
+      </div>
+      <div class="card-body">
+        <!--img
+          id="profile-img"
+          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          class="profile-img-card"
+        /-->
       <form
         *ngIf="!isLoggedIn"
         name="form"
         (ngSubmit)="f.form.valid && onSubmit()"
         #f="ngForm"
         novalidate
-       >
+      >
         <div class="form-group">
           <label for="username">Username</label>
           <input
@@ -54,14 +60,11 @@
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block" [routerLink]="['../addgateways']" routerLinkActive="router-link-active" >
+        <div class="form-group" style="text-align:right;padding-top: 15px;padding-bottom: 15px;">
+          <a href="somelink.com" style="margin-right: 5px;">Forgot pasword</a>
+          <button class="btn btn-primary btn-block">
             Login
           </button>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block" [routerLink]="['/register']" routerLinkActive="router-link-active"
-            >Sign Up</button>
-          </div>
         </div>
         <div class="form-group">
           <div
@@ -78,11 +81,7 @@
         Logged in as {{ roles }}.
       </div>
     </div>
-
-
-  </div>
-  <div class="col-md-6"  style="width: 210px;">
-    Hallo, Ich bin Ich,RAUL
+      <div class="card-footer"></div>
   </div>
 </div>
 

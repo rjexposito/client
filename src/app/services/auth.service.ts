@@ -38,4 +38,8 @@ export class AuthService {
       ipv4_address
     },httpOptions);
   }
+
+  getAllGateways(): Observable<any>{
+    return this.http.get(GATEWAY_API, httpOptions);
+  }
 }
