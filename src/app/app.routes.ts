@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/authentication/register/register
 import { ProfileComponent } from './components/profile/profile.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
+import { GatewayslitsComponent } from './components/gatewayslits/gatewayslits.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'addgateways', component: GatewaysComponent },
+  { path: 'listgateways', component: GatewayslitsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

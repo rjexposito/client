@@ -23,6 +23,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
+import { GatewayslitsComponent } from './components/gatewayslits/gatewayslits.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BoardModeratorComponent } from './components/board-moderator/board-mode
     RegisterComponent,
     ProfileComponent,
     BoardAdminComponent,
-    BoardModeratorComponent
+    BoardModeratorComponent,
+    GatewayslitsComponent
   ],
   imports: [
     BrowserModule,

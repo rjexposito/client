@@ -1,7 +1,10 @@
+<h1 class="animate__animated animate__bounce">An animated element</h1>
+
 <div>
   <h3>Create a new Gateway</h3>
   <div class="submit-form">
     <div *ngIf="!submitted">
+
       <div class="form-group">
         <label for="serial_number">Serial number</label>
         <input
@@ -12,6 +15,15 @@
           [(ngModel)]="serial_number"
           name="serial_number"
         />
+        <!-- <div class="alert-danger" *ngIf="serial_number && submitted">
+          <div *ngIf="serial_number.['required']">Serial number is required</div>
+          <div *ngIf="serial_number.['minlength']">
+            Serial number must be at least 3 characters
+          </div>
+          <div *ngIf="serial_number.['maxlength']">
+            Serial number must be at most 20 characters
+          </div>
+          </div> -->
       </div>
 
       <div class="form-group">
@@ -34,7 +46,9 @@
           name="ipv4_address"
         />
       </div>
-        <button  class="btn btn-success" (click)="saveGateway()" style="margin-top: 20px;">Submit</button>
+        <button  class="btn btn-success"
+        (click)="saveGateway()"
+        onclick="ValidateIPaddress(document.form-group.ipv4_address)" style="margin-top: 20px;">Submit</button>
     </div>
 
     <!-- <div *ngIf="submitted">

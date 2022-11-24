@@ -2,3 +2,13 @@
     max-width: 400px;
     margin: auto;
   }
+
+  .animate__animated.animate__bounce {
+    --animate-duration: 10s;
+  }
+
+  /* This changes all the animations globally */
+  :root {
+    --animate-duration: 8ms;
+    --animate-delay: 2.9s;
+  }

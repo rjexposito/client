@@ -1,0 +1,61 @@
+<div class="list row">
+  <div class="col-md-8" style="margin-top: 30px;">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Gateways List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let gateway of gateways; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveGateway(gateway, i)"
+      >
+        {{ gateway.human_readable }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllGateways()">
+      Remove All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentGateway.id">
+      <h4>Gateway</h4>
+      <div>
+        <label><strong>Serial number:</strong></label> {{ currentGateway.serial_number }}
+      </div>
+      <div>
+        <label><strong>Human readable:</strong></label> {{ currentGateway.human_readable}}
+      </div>
+      <div>
+        <label><strong>Published:</strong></label> {{ currentGateway.published ? "Published" : "Pending" }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/listgateways/{{ currentGateway.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentGateway">
+      <br />
+      <p>Please click on a Gateway...</p>
+    </div>
+  </div>
+</div>

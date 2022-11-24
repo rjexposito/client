@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gateway } from 'src/app/models/gateway.model';
-import { AuthService } from '../../services/auth.service';
-// import { TokenStorageService } from '../../services/token-storage.service';
+import { GatewaysService } from '../../services/gateways.service';
+import { TokenStorageService } from '../../services/token-storage.service';
 
 @Component({
   selector: 'app-gateways',
@@ -18,14 +18,14 @@ export class GatewaysComponent implements OnInit {
 
   all_gateways: Gateway[] = [];
 
-  constructor(private authService: AuthService) { }
+  constructor(private service: GatewaysService) { }
 
   ngOnInit(): void {
     this.getAll();
   }
 
   getAll(): void{
-    this.authService.getAllGateways().subscribe( gateways_list => {
+    this.service.getAll().subscribe( gateways_list => {
       this.all_gateways = gateways_list;
      })
   }
@@ -34,7 +34,10 @@ export class GatewaysComponent implements OnInit {
     const serial_number = this.serial_number;
     const human_readable = this.human_readable;
     const ipv4_address = this.ipv4_address;
-    this.authService.createGateway(serial_number,human_readable,ipv4_address).subscribe(_ =>{
+    this.service.create({
+      'serial_number': serial_number,
+      'human_readable': human_readable,
+      'ipv4_address': ipv4_address}).subscribe(_ =>{
       this.getAll();
       this.initialize();
     });

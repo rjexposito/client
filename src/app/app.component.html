@@ -2,8 +2,11 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark main-container">
     <a href="#" class="navbar-brand">JvlSoft</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="/listgateways" class="nav-link" routerLink="listgateways">List gateways</a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
@@ -49,7 +52,5 @@
     <app-login></app-login>
   <div> -->
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+
 
